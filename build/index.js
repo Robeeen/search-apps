@@ -77,7 +77,7 @@ function Edit({
     _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_5___default()({
       path: `/fnugg/v1/search?q=${searchTerm}`
     }).then(results => {
-      setMySuggestions.json(results);
+      JSON.stringify(setMySuggestions(results));
       setLoading(false);
     }).catch(() => {
       setLoading(false);
@@ -107,18 +107,18 @@ function Edit({
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: "Search Ski Resort"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SearchControl, {
     label: "Search Resort",
     value: searchTerm,
     onChange: value => setSearchTerm(value),
     help: "Type to search for a ski resort."
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
-      "height": "100px",
+      "height": "200px",
       "width": "100%",
       "backgroundColor": "#c2c2c2"
     }
-  }, mySuggession.name)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+  }, "Name:", JSON.stringify(mySuggession.name), " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), "Description: ", JSON.stringify(mySuggession.description))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
     label: "Search Resort",
     value: searchTerm,
     onChange: value => setSearchTerm(value),
@@ -129,11 +129,7 @@ function Edit({
       "width": "100%",
       "backgroundColor": "#c2c2c2"
     }
-  }, mySuggession.map((item, index) => {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
-      key: index
-    }, item.name);
-  }))));
+  })));
 }
 
 /***/ }),

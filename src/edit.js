@@ -31,7 +31,7 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 
-import { PanelBody, TextControl, Button, PanelRow } from '@wordpress/components';
+import { PanelBody, TextControl, Button, SearchControl, PanelRow } from '@wordpress/components';
 import { react, useState, useEffect } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 
@@ -47,7 +47,7 @@ export default function Edit({ attributes, setAttributes }) {
 		setLoading(true);
 		apiFetch({ path: `/fnugg/v1/search?q=${searchTerm}` })
 			.then((results) => {
-				setMySuggestions.json(results);
+				JSON.stringify(setMySuggestions(results));
 				setLoading(false);
 			})
 			.catch(() => {
@@ -80,26 +80,17 @@ export default function Edit({ attributes, setAttributes }) {
 
 				<InspectorControls>
 					<PanelBody title="Search Ski Resort">
-						<TextControl
+						<SearchControl
 							label="Search Resort"
 							value={searchTerm}
 							onChange={(value) => setSearchTerm(value)}
 							help="Type to search for a ski resort."
 						/>
 						<PanelRow>
-							<div style={{ "height": "100px", "width": "100%", "backgroundColor": "#c2c2c2" }}>
+							<div style={{ "height": "200px", "width": "100%", "backgroundColor": "#c2c2c2" }}>
 
-								{/* {suggestions.map((item, index) => {
-									return (
-										<li key={index}>
-
-											{item.result[0].name}
-
-										</li>
-									)
-								})
-								} */}
-								{mySuggession.name}
+								Name:{ JSON.stringify(mySuggession.name)} <br />
+								Description: { JSON.stringify(mySuggession.description)}
 							</div>
 						</PanelRow>
 					</PanelBody>
@@ -111,7 +102,7 @@ export default function Edit({ attributes, setAttributes }) {
 					help="Type to search for a ski resort."
 				/>
 				<div style={{ "height": "100px", "width": "100%", "backgroundColor": "#c2c2c2" }}>
-					{mySuggession.map((item, index) => {
+					{/* {mySuggession.map((item, index) => {
 						return (
 							<li key={index}>
 
@@ -120,7 +111,7 @@ export default function Edit({ attributes, setAttributes }) {
 							</li>
 						)
 
-					})}
+					})} */}
 				</div>
 			</p>
 		</>
