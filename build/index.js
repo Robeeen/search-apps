@@ -118,18 +118,18 @@ function Edit({
       "width": "100%",
       "backgroundColor": "#c2c2c2"
     }
-  }, "Name:", JSON.stringify(mySuggession.name), " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), "Description: ", JSON.stringify(mySuggession.description))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+  }, "Name:", JSON.stringify(mySuggession.name), " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), "Description: ", JSON.stringify(mySuggession.description))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SearchControl, {
     label: "Search Resort",
     value: searchTerm,
     onChange: value => setSearchTerm(value),
     help: "Type to search for a ski resort."
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
-      "height": "100px",
+      "height": "200px",
       "width": "100%",
       "backgroundColor": "#c2c2c2"
     }
-  })));
+  }, "Name:", JSON.stringify(mySuggession.name), " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), "Description: ", JSON.stringify(mySuggession.description), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null), "Lift Count: ", JSON.stringify(mySuggession.lifts), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("br", null))));
 }
 
 /***/ }),

@@ -89,29 +89,23 @@ export default function Edit({ attributes, setAttributes }) {
 						<PanelRow>
 							<div style={{ "height": "200px", "width": "100%", "backgroundColor": "#c2c2c2" }}>
 
-								Name:{ JSON.stringify(mySuggession.name)} <br />
-								Description: { JSON.stringify(mySuggession.description)}
+								Name:{JSON.stringify(mySuggession.name)} <br /> <br />
+								Description: {JSON.stringify(mySuggession.description)}
 							</div>
 						</PanelRow>
 					</PanelBody>
 				</InspectorControls>
-				<TextControl
+				<SearchControl
 					label="Search Resort"
 					value={searchTerm}
 					onChange={(value) => setSearchTerm(value)}
 					help="Type to search for a ski resort."
 				/>
-				<div style={{ "height": "100px", "width": "100%", "backgroundColor": "#c2c2c2" }}>
-					{/* {mySuggession.map((item, index) => {
-						return (
-							<li key={index}>
-
-								{item.name}
-
-							</li>
-						)
-
-					})} */}
+				<div style={{ "height": "200px", "width": "100%", "backgroundColor": "#c2c2c2" }}>
+					Name:{JSON.stringify(mySuggession.name)} <br /><br />
+					Description: {JSON.stringify(mySuggession.description)}<br />
+					Lift Count: {JSON.stringify(mySuggession.lifts)}<br />
+					{/* Lift Open: {JSON.stringify(mySuggession.lifts.open)} */}
 				</div>
 			</p>
 		</>
